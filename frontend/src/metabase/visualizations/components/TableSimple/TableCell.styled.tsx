@@ -13,7 +13,7 @@ export const CellRoot = styled.td<{
   color: ${color("text-dark")};
   font-weight: bold;
   text-align: ${props => (props.isRightAligned ? "right" : "unset")};
-  white-space: nowrap;
+  white-space: pre;
 
   border-bottom: 1px solid ${color("border")};
 

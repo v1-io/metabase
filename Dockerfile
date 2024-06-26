@@ -5,7 +5,6 @@
 FROM node:18-bullseye as builder
 
 ARG MB_EDITION=oss
-ARG VERSION
 
 WORKDIR /home/node
 
@@ -19,7 +18,7 @@ COPY . .
 # version is pulled from git, but git doesn't trust the directory due to different owners
 RUN git config --global --add safe.directory /home/node
 
-RUN INTERACTIVE=false CI=true MB_EDITION=$MB_EDITION bin/build.sh :version ${VERSION}
+RUN INTERACTIVE=false CI=true MB_EDITION=$MB_EDITION bin/build.sh
 
 # ###################
 # # STAGE 2: runner
